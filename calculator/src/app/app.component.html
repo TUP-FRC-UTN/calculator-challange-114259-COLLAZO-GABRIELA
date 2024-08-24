@@ -1,0 +1,30 @@
+
+<div class="container" >
+      
+  <h1 style="text-align: center;">Aplicación: {{ title }}</h1>
+<br>
+    <label for="operandoA">Ingrese numero:</label>
+    <input  type="text"  class="form-control"[value]="numero1" 
+      placeholder="ingrese un numero" (input)=" actualizarValorNro1($event)"
+      
+      
+    />
+
+   <br>
+  
+
+    <label for="operandoB">Ingrese numero:</label>
+    <input type="text"  class="form-control"
+            placeholder="ingrese un numero" [value]="numero2"  (input)=" actualizarValorNro2($event)"
+    >
+
+    <label for="resultado">Resultado: </label>
+    <input type="text" value="{{resultado}}" class="form-control" 
+      placeholder=""
+    >
+
+  <app-botones [nro1]="numero1" [nro2]="numero2" (resultado)="calcularResultado($event)"
+  (limpiando)="limpiar($event)"
+  ></app-botones>
+
+</div>
